@@ -37,3 +37,67 @@
 <h3>Check not in Strings</h3>
 <button (click) = "check_str_not()">Check String</button>
 <p>{{responseData_check_not.example}}</p>
+
+<h1>Python - Slicing Strings</h1>
+
+<h3>Slicing String</h3>
+<h4>Note: The first character has index 0.</h4>
+<input type="text" [(ngModel)] = "inputData_slice" placeholder="Enter Data" />
+<button (click) = "slicing()">Get String sliced</button>
+<p>{{responseData_slice.example}}</p>
+<p>{{responseData_slice.actual}}</p>
+
+<h3>Slicing start String</h3>
+<input type="text" [(ngModel)] = "inputData_slice_start" placeholder="Enter Data" />
+<button (click) = "slice_start()">Get String sliced</button>
+<p>{{responseData_slice_start.example}}</p>
+<p>{{responseData_slice_start.actual}}</p>
+
+<h3>Slicing end String</h3>
+<input type="text" [(ngModel)] = "inputData_slice_end" placeholder="Enter Data" />
+<button (click) = "slice_end()">Get String sliced</button>
+<p>{{responseData_slice_end.example}}</p>
+<p>{{responseData_slice_end.actual}}</p>
+
+<h3>Slicing Negative Indexing</h3>
+<input type="text" [(ngModel)] = "inputData_slice_negative" placeholder="Enter Data" />
+<button (click) = "slice_negative()">Get String sliced</button>
+<p>{{responseData_slice_negative.example}}</p>
+<p>{{responseData_slice_negative.actual}}</p>
+
+<h3>Modify Strings</h3>
+<h4>removes any whitespace from the beginning or the end</h4>
+<input type="text" [(ngModel)] = "inputData_modify_str" placeholder="Enter Data" />
+<button (click) = "modify_str()">Get Modifed string</button>
+<p>{{responseData_modify_str.upper}}</p>
+<p>{{responseData_modify_str.upper_actual}}</p>
+<p>{{responseData_modify_str.lower}}</p>
+<p>{{responseData_modify_str.lower_actual}}</p>
+<p>{{responseData_modify_str.whitespace}}</p>
+<p>{{responseData_modify_str.whitespace_actual}}</p>
+<p>{{responseData_modify_str.replace}}</p>
+<p>{{responseData_modify_str.replace_actual}}</p>
+
+<h3>Splitting String</h3>
+<input type="text" [(ngModel)] = "inputData_split_str" placeholder="Enter Data" />
+<button (click) = "split_str()">Get String sliced</button>
+<p>{{responseData_split_str.example}}</p>
+<p>{{responseData_split_str.actual}}</p>
+
+<h3>Python - String Concatenation</h3>
+<input type="text" [(ngModel)] = "inputData_concat_str_A" placeholder="Enter Data" />
+<input type="text" [(ngModel)] = "inputData_concat_str_B" placeholder="Enter Data" />
+<button (click) = "str_concat()">Get String Concatenated</button>
+<p>{{responseData_concat_str.example}}</p>
+<p>{{responseData_concat_str.actual}}</p>
+
+<h1>Python - Format - Strings</h1>
+<button (click) = "format_str()">Format String</button>
+<p>{{responseData_format_str.example}}</p>
+<p>{{responseData_format_str.example_two}}</p>
+
+<h2>Python Escape Characters</h2>
+<button (click) = "escape_char()">Escape Characters</button>
+<p>Single_Quote {{responseData_escape_char.Single_Quote}}  {{responseData_escape_char.Single_Quote_actual}}</p>
+<p>Backslash {{responseData_escape_char.Backslash}}  {{responseData_escape_char.Backlash_actual}}</p>
+<p>New Line {{responseData_escape_char.New_Line}}</p>

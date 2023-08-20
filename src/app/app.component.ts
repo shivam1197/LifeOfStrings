@@ -12,6 +12,14 @@ export class AppComponent {
   inputData_arrays: string = '';
   inputData_loops: string = '';
   inputData_len: string = '';
+  inputData_slice: string = '';
+  inputData_slice_start: string = '';
+  inputData_slice_end: string = '';
+  inputData_slice_negative: string = '';
+  inputData_modify_str: string = '';
+  inputData_split_str: string = '';
+  inputData_concat_str_A: string = '';
+  inputData_concat_str_B: string = '';
   responseData: any = {};
   responseData_one: any = {};
   responseData_two: any = {};
@@ -20,7 +28,15 @@ export class AppComponent {
   responseData_len: any = {};
   responseData_check: any = {};
   responseData_check_not: any = {};
-
+  responseData_slice: any = {};
+  responseData_slice_start: any = {};
+  responseData_slice_end: any = {};
+  responseData_slice_negative: any = {};
+  responseData_modify_str: any = {};
+  responseData_split_str: any = {};
+  responseData_concat_str: any = {};
+  responseData_format_str: any = {};
+  responseData_escape_char: any = {};
 
 
   constructor(private http: HttpClient){}
@@ -89,6 +105,67 @@ export class AppComponent {
   check_str_not(){
     this.http.get('http://localhost:5000/api/check_str_not').subscribe((data:any) => {
       this.responseData_check_not = data;
+    });
+  }
+
+  slicing(){
+    const dataToSend = {input:this.inputData_slice}
+    this.http.post('http://localhost:5000/api/slicing',dataToSend).subscribe((data:any) =>{
+      this.responseData_slice = data;
+    })
+  }
+
+  slice_start(){
+    const dataToSend = {input:this.inputData_slice_start}
+    this.http.post('http://localhost:5000/api/slice_start',dataToSend).subscribe((data:any) =>{
+      this.responseData_slice_start = data;
+    })
+  }
+
+  slice_end(){
+    const dataToSend = {input:this.inputData_slice_end}
+    this.http.post('http://localhost:5000/api/slice_end',dataToSend).subscribe((data:any) =>{
+      this.responseData_slice_end = data;
+    })
+  }
+
+  slice_negative(){
+    const dataToSend = {input:this.inputData_slice_negative}
+    this.http.post('http://localhost:5000/api/slice_negative',dataToSend).subscribe((data:any) =>{
+      this.responseData_slice_negative = data;
+    })
+  }
+
+  modify_str(){
+    const dataToSend = {input:this.inputData_modify_str}
+    this.http.post('http://localhost:5000/api/modify_str',dataToSend).subscribe((data:any) =>{
+      this.responseData_modify_str = data;
+    })
+  }
+
+  split_str(){
+    const dataToSend = {input:this.inputData_split_str}
+    this.http.post('http://localhost:5000/api/split_str',dataToSend).subscribe((data:any) =>{
+      this.responseData_split_str = data;
+    })
+  }
+
+  str_concat(){
+    const dataToSend = {input:this.inputData_concat_str_A,input_two:this.inputData_concat_str_B}
+    this.http.post('http://localhost:5000/api/str_concat',dataToSend).subscribe((data:any) =>{
+      this.responseData_concat_str = data;
+    })
+  }
+
+  format_str(){
+    this.http.get('http://localhost:5000/api/format_str').subscribe((data:any) =>{
+      this.responseData_format_str = data;
+    });
+  }
+
+  escape_char(){
+    this.http.get('http://localhost:5000/api/escape_char').subscribe((data:any) =>{
+      this.responseData_escape_char= data;
     });
   }
 }
